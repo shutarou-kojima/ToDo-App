@@ -1,0 +1,15 @@
+# is comment
+
+# 特定のフォルダの中身全てを無視する
+# bin/
+
+# 特定の拡張子を無視する
+# .exe
+
+# nuget.exe は必用なファイル
+# !/.nuget/nuget.exe
+
+# パッケージフォルダ内の .ts ファイルは要らない
+# package/**/*.ts
+
+.vscode
