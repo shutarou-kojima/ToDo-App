@@ -9,3 +9,5 @@
   $main = "<p>テキスト<br>テキストテキスト</p>";
 
   templateHTML($css, $js, $title, $h1, $nav, $main);
+
+  require_once '/MAMP/htdocs/todo-app/common/db.php';

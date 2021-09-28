@@ -7,7 +7,7 @@ function templateHTML($css, $js, $title, $h1, $nav, $main)
 <html lang='ja'>
 <head>
   <meta charset='utf-8'>
-  <link type='text/css' rel='stylesheet' href='/common/sanitize.css' />
+  <link type='text/css' rel='stylesheet' href='/todo-app/common/sanitize.css' />
   $css
   $js
   <title>$title</title>
