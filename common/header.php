@@ -3,6 +3,7 @@
 <head>
   <meta charset='utf-8'>
   <link type='text/css' rel='stylesheet' href='/todo-app/common/sanitize.css' />
+  <link type='text/css' rel='stylesheet' href='/todo-app/common/common.css' />
   
   <?php
     if(isset($css))

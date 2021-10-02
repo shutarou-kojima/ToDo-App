@@ -1,0 +1,65 @@
+/* 以下、参考URLから引用
+* https://jajaaan.co.jp/css/button/
+*/
+
+/*まずはお決まりのボックスサイズ算出をborder-boxに */
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+html {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  font-size: 62.5%;/*rem算出をしやすくするために*/
+}
+body {
+  margin :20px;
+}
+
+header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+nav {
+  display: flex;
+  justify-content: space-around;
+}
+
+footer {
+  margin-top: 5px;
+  padding: 20px 0;
+  background-color: #ddd;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+
+.btn {
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 1.5;
+  position: relative;
+  display: inline-block;
+  padding: 1rem 1rem;
+  cursor: pointer;
+  /* transition: all 0.3s; */
+  text-align: center;
+  vertical-align: middle;
+  color: #fff;
+  background-color: #eb6100;
+  border-radius: 100vh;
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  border: none;
+}
+
+.btn:hover {
+  color: #111;
+  /* background: #f56500; */
+}

@@ -3,7 +3,7 @@
   // $js = "./script.js";
   $title = "トップ画面 - ToDoメモ";
   $h1 = "ToDoメモ";
-  $nav = "<a href='../taskList' class='button'>→</a>";
+  $nav = "<a href='../taskList' class='btn'>→</a>";
 
 
   require_once '/MAMP/htdocs/todo-app/common/header.php';

@@ -12,7 +12,7 @@ require_once '/MAMP/htdocs/todo-app/common/header.php';
 <div class="form">
   <form method="post" action="sandbox.php">
     送信するデータ:<input type="text" name="send_name" id="name" required>
-    <input type="submit" value="送信">
+    <input type="submit" class="btn" value="送信">
   </form>
 </div>
 <div class="receive">

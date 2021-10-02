@@ -3,8 +3,8 @@
   // $js = "./script.js";
   $title = "タスク一覧画面 - ToDoメモ";
   $h1 = "タスク一覧";
-  $nav = "<a href='../createTask' class='button'>タスク追加</a>\n";
-  $nav .= "<a href='../categoryList' class='button'>カテゴリ</a>\n";
+  $nav = "<a href='../createTask' class='btn'>タスク追加</a>\n";
+  $nav .= "<a href='../categoryList' class='btn'>カテゴリ</a>\n";
   require_once '/MAMP/htdocs/todo-app/common/header.php';
   
   // main start
