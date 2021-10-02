@@ -4,14 +4,21 @@
   $title = "カテゴリ管理画面 - ToDoメモ";
   $h1 = "カテゴリ一覧";
   $nav = "<a href='../taskList' class='button'>戻る</a>";
-  $main = "まだ作成中";
 
   require_once '/MAMP/htdocs/todo-app/common/header.php';
   
   // main start
   ?>
   
-  <p>まだ製作中</p>
+  <ul class="category_list">
+  <?php
+  require_once "../common/db.php"
+  ?>
+  
+  <li class="category">
+      
+    </li>
+  </ul>
   
   <?php
   // main end

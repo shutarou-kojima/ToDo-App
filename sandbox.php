@@ -26,7 +26,13 @@ require_once '/MAMP/htdocs/todo-app/common/header.php';
 
 
 <?php
+
+require_once '/MAMP/htdocs/todo-app/common/db.php';
+$tasks = select("SELECT * FROM tasks");
+dumper($tasks);
+
+
 require_once '/MAMP/htdocs/todo-app/common/footer.php';
 
 
-require_once '/MAMP/htdocs/todo-app/common/db.php';
+
