@@ -13,13 +13,28 @@ try {
   $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
   // print_r($result);
 
-  echo '<script>window.onload = function() {alert("データベース接続 OK！"); console.table('.json_encode($result).');}</script>';
-  
+  echo '<script>';
+  echo 'window.onload = function() {';
+  echo 'alert("データベース接続 OK！");';
+  echo 'console.log("タスク一覧");';
+  echo 'let tasks = ' . json_encode($result) . ';';
+  echo 'console.table(tasks);';
+
+  $sql = "SELECT * FROM categories";
+  $stmt = $dbh->query($sql);
+  $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+  // print_r($result);
+  echo 'console.log("\n\nカテゴリ一覧");';
+  echo 'let categories = ' . json_encode($result) . ';';
+  echo 'console.table(categories);';
+  echo '}';
+  echo '</script>';
+
   $dbh = null;
 } catch (Exception $e) {
   // $errMSG = htmlspecialchars($e->getMessage(), ENT_QUOTES, 'UTF-8');
   $errMSG = $e->getMessage();
 
-echo '<script>window.onload = function() {alert("エラー発生！"); console.log("'.$errMSG.'");}</script>';
+  echo '<script>window.onload = function() {alert("エラー発生！"); console.log("' . $errMSG . '");}</script>';
   die();
 }
