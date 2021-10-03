@@ -1,6 +1,6 @@
 <?php
   $css = "./style.css";
-  // $js = "./script.js";
+  $js = "./script.js";
   $title = "タスク一覧画面 - ToDoメモ";
   $h1 = "タスク一覧";
   $nav = "<a href='../createTask' class='btn'>タスク追加</a>\n";
