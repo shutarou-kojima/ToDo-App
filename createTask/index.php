@@ -4,9 +4,6 @@
   $title = "タスク登録画面 - ToDoメモ";
   $h1 = "タスク登録";
   $nav = "";
-  $main = "";
-  
-  
   
   require_once '/MAMP/htdocs/todo-app/common/header.php';
   

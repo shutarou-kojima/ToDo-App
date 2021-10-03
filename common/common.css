@@ -28,6 +28,12 @@ header {
 nav {
   display: flex;
   justify-content: space-around;
+  /* flex:2 0 200px; */
+  align-items: center;
+}
+
+nav > .btn {
+  margin-left: 20px;
 }
 
 footer {
@@ -53,7 +59,7 @@ footer {
   vertical-align: middle;
   color: #fff;
   background-color: #eb6100;
-  border-radius: 100vh;
+  border-radius: 10vh;
   text-decoration: none;
   letter-spacing: 0.1em;
   border: none;
