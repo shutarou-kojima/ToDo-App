@@ -18,7 +18,7 @@ require_once '/MAMP/htdocs/todo-app/common/header.php';
         <label for="name">タスク名称</label>
       </td>
       <td class="input">
-        <input type="text" name="name" id="name" required>
+        <input type="text" name="name" id="name" value="タスク名" required>
       </td>
     </tr>
     <tr>
@@ -26,7 +26,7 @@ require_once '/MAMP/htdocs/todo-app/common/header.php';
         <label for="description">内容</label>
       </td>
       <td class="input">
-        <input type="textarea" name="description" id="description" required>
+        <input type="textarea" name="description" id="description" value="内容だよ～">
       </td>
     </tr>
     <tr>
@@ -34,7 +34,11 @@ require_once '/MAMP/htdocs/todo-app/common/header.php';
         <label for="category">カテゴリ</label>
       </td>
       <td class="input">
-        <input type="select" name="category" id="category" required>
+        <select name="category" id="category" required>
+        <option value="1" selected>カテゴリ１</option>
+        <option value="2">カテゴリ２</option>
+        <option value="3">カテゴリ３</option>
+      </select>
       </td>
     </tr>
     <tr>
@@ -50,8 +54,10 @@ require_once '/MAMP/htdocs/todo-app/common/header.php';
         <label for="status">状況</label>
       </td>
       <td class="input">
-        <input type="radio" name="status" id="status" required>
-      </td>
+        <input type="radio" name="status" id="status" value="1" checked>未着手
+        <input type="radio" name="status" id="status" value="2">着手
+        <input type="radio" name="status" id="status" value="9">完了
+        </td>
     </tr>
     <tr>
       <td class="label">

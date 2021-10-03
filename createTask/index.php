@@ -10,7 +10,7 @@
   // main start
   ?>
   
-  <p>まだ製作中</p>
+  <p>updateTaskが出来上がってから作る。</p>
   
   <?php
   // main end
