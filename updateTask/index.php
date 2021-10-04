@@ -62,16 +62,16 @@ $task = select("SELECT * FROM tasks WHERE id =" . $_GET['id'])[0];
     </tr>
     <tr>
       <td class="label">
-        <label for="status">状況</label>
+        <label for="state">状況</label>
       </td>
       <td class="input">
-        <input type="radio" name="status" id="status" value="1" <?php if ($task['state'] == 1) {
+        <input type="radio" name="state" id="state" value="1" <?php if ($task['state'] == 1) {
                                                                   echo "checked";
                                                                 } ?>>未着手
-        <input type="radio" name="status" id="status" value="2" <?php if ($task['state'] == 2) {
+        <input type="radio" name="state" id="state" value="2" <?php if ($task['state'] == 2) {
                                                                   echo "checked";
                                                                 } ?>>着手
-        <input type="radio" name="status" id="status" value="9" <?php if ($task['state'] == 9) {
+        <input type="radio" name="state" id="state" value="9" <?php if ($task['state'] == 9) {
                                                                   echo "checked";
                                                                 } ?>>完了
       </td>
@@ -81,6 +81,7 @@ $task = select("SELECT * FROM tasks WHERE id =" . $_GET['id'])[0];
         <a href="../taskList" class="btn">戻る</a>
       </td>
       <td class="input">
+        <input type="hidden" name="id" value="<?php echo $_GET['id']; ?>">
         <input type="submit" class="btn" value="保存">
       </td>
     </tr>

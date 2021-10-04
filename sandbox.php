@@ -5,31 +5,12 @@ $title = "サンドボックスのページ";
 $h1 = "サンドボックス";
 $nav = "<button>ボタン</button>";
 
+require_once '/MAMP/htdocs/todo-app/common/db.php';
+
 require_once '/MAMP/htdocs/todo-app/common/header.php';
-
-
 ?>
 
-  <?php
-  require_once '/MAMP/htdocs/todo-app/common/db.php';
-  $tasks = select("SELECT * FROM tasks");
-  $categories = select("SELECT * FROM categories");
-  // INSERT INTO tasks (name, description state category due_date) VALUES ('タスクの名前','せつめい',2,2,'2021-10-5')
 
-  for($i=0; $i<count( $categories ); $i++){
-    $cat = $categories[$i];
-    // id, name
-    print_r($cat);
-    echo $cat['id'];
-    echo $br;
-  }
-  echo $br.$br;
-  for($i=0; $i<count( $tasks ); $i++){
-    // id, name, description, state, category, due_date
-    print_r($tasks[$i]);
-    echo $br;
-  }
-  ?>
 
 <p>テキスト<br>テキストテキスト</p>
 <div class="form">
@@ -49,9 +30,35 @@ require_once '/MAMP/htdocs/todo-app/common/header.php';
 
 <?php
 
-// require_once '/MAMP/htdocs/todo-app/common/db.php';
-$tasks = select("SELECT * FROM tasks");
-dumper($tasks);
+// インサートのテスト
+// $new_params = [
+//   "name"=> "新しいタスク".mt_rand(),
+//   "description" => "新しいタスクの説明文",
+//   "state" => "1",
+//   "category" => "2",
+//   "due_date" => "2021-10-5"
+// ];
+// insert("tasks", $new_params);
+
+// insert("categories", ["name" => "新しいカテゴリ"]);
+
+
+// アップデートのテスト
+// $update_params = [
+//   "name"=> "新しいタスク".mt_rand(),
+//   "description" => "新しいタスクの説明文",
+//   "state" => "3",
+//   "category" => "2",
+//   "due_date" => "2021-10-5",
+//   "id" => "5"
+// ];
+// update("tasks", $update_params);
+
+// jsコンソールに一覧出力
+$table = "tasks";
+// $table = "categories";
+dumper(select("SELECT * FROM " . $table));
+
 
 // echo 'arg: ' . isset($css) ."<br />\n";
 // echo 'func: ' . function_exists('select') ."<br />\n";

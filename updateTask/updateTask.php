@@ -21,4 +21,6 @@ require_once '/MAMP/htdocs/todo-app/common/header.php';
 <?php
 require_once '/MAMP/htdocs/todo-app/common/db.php';
 dumper($_POST);
+
+update("tasks", $_POST);
 require_once '/MAMP/htdocs/todo-app/common/footer.php';
