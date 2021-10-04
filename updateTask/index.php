@@ -8,6 +8,9 @@ $nav = "";
 
 require_once '/MAMP/htdocs/todo-app/common/header.php';
 
+require_once '/MAMP/htdocs/todo-app/common/db.php';
+$task = select("SELECT * FROM tasks WHERE id =" . $_GET['id'])[0];
+
 // main start
 ?>
 
@@ -18,7 +21,7 @@ require_once '/MAMP/htdocs/todo-app/common/header.php';
         <label for="name">タスク名称</label>
       </td>
       <td class="input">
-        <input type="text" name="name" id="name" value="タスク名" required>
+        <input type="text" name="name" id="name" value="<?php echo $task['name']; ?>" required>
       </td>
     </tr>
     <tr>
@@ -26,7 +29,7 @@ require_once '/MAMP/htdocs/todo-app/common/header.php';
         <label for="description">内容</label>
       </td>
       <td class="input">
-        <input type="textarea" name="description" id="description" value="内容だよ～">
+        <input type="textarea" name="description" id="description" value="<?php echo $task['description']; ?>">
       </td>
     </tr>
     <tr>
@@ -35,10 +38,18 @@ require_once '/MAMP/htdocs/todo-app/common/header.php';
       </td>
       <td class="input">
         <select name="category" id="category" required>
-        <option value="1" selected>カテゴリ１</option>
-        <option value="2">カテゴリ２</option>
-        <option value="3">カテゴリ３</option>
-      </select>
+          <?php
+          $categories = select("SELECT * FROM categories");
+          for ($i = 0; $i < count($categories); $i++) {
+            $cat = $categories[$i];
+            echo "<option value='" . $cat['id'] . "'";
+            if ($task['category'] == $cat['id']) {
+              echo " selected";
+            }
+            echo ">" . $cat['name'] . "</option>\n";
+          }
+          ?>
+        </select>
       </td>
     </tr>
     <tr>
@@ -46,7 +57,7 @@ require_once '/MAMP/htdocs/todo-app/common/header.php';
         <label for="date">期日</label>
       </td>
       <td class="input">
-        <input type="date" name="due_date" id="date" required>
+        <input type="date" name="due_date" id="date" value="<?php echo $task['due_date']; ?>" required>
       </td>
     </tr>
     <tr>
@@ -54,10 +65,16 @@ require_once '/MAMP/htdocs/todo-app/common/header.php';
         <label for="status">状況</label>
       </td>
       <td class="input">
-        <input type="radio" name="status" id="status" value="1" checked>未着手
-        <input type="radio" name="status" id="status" value="2">着手
-        <input type="radio" name="status" id="status" value="9">完了
-        </td>
+        <input type="radio" name="status" id="status" value="1" <?php if ($task['state'] == 1) {
+                                                                  echo "checked";
+                                                                } ?>>未着手
+        <input type="radio" name="status" id="status" value="2" <?php if ($task['state'] == 2) {
+                                                                  echo "checked";
+                                                                } ?>>着手
+        <input type="radio" name="status" id="status" value="9" <?php if ($task['state'] == 9) {
+                                                                  echo "checked";
+                                                                } ?>>完了
+      </td>
     </tr>
     <tr>
       <td class="label">
@@ -75,6 +92,3 @@ require_once '/MAMP/htdocs/todo-app/common/header.php';
 // main end
 
 require_once '/MAMP/htdocs/todo-app/common/footer.php';
-  
-  
-  // require_once '/MAMP/htdocs/todo-app/common/db.php';
