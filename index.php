@@ -12,7 +12,7 @@ require_once '/MAMP/htdocs/todo-app/common/header.php';
 // main start
 ?>
 
-<p>phpでtodoアプリを作ってみました。<br><a href='./top'>todoアプリのトップページへ移動</a></p>
+<p>phpでtodoアプリを作ってみました。<br><a href='./top' class='btn'>todoアプリのトップページへ移動</a></p>
 
 <?php
 // main end
