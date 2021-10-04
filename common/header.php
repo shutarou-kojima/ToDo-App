@@ -1,3 +1,9 @@
+<?php
+// common args
+$br = "<br />\n";
+
+?>
+
 <!DOCTYPE html>
 <html lang='ja'>
 <head>
