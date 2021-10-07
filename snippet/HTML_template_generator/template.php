@@ -10,8 +10,8 @@
 
 <body>
   <?php
-  require "get_main.php";
-  get_main();
+  require "./get_main.php";
+  echo get_main();
   ?>
 </body>
 
